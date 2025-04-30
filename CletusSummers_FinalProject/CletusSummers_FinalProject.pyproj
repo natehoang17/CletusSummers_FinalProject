@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>d1a635ed-4760-488b-aaf8-7675c09650d2</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>CletusSummers_FinalProject.py</StartupFile>
+    <StartupFile>Main\main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,27 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CletusSummers_FinalProject.py" />
+    <Compile Include="locationPackage\location_package.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="locationPackage\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Main\main.py" />
+    <Compile Include="Main\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="locationPackage\" />
+    <Folder Include="Main\" />
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\EncryptedGroupHints Spring 2025.json" />
+    <Content Include="Data\IMG_0356.jpg" />
+    <Content Include="Data\TeamsAndEncryptedMessagesForDistribution.json" />
+    <Content Include="Data\UCEnglish.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
