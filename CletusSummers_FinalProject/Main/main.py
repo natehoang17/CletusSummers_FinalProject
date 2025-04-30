@@ -46,3 +46,17 @@ def main():
 
     team_name = "Cletus Summers"
 
+decryptor = Decryptor(english_file, group_hints_file)
+try:
+        location = decryptor.decrypt_location(team_name)
+        print(f"[+] Decrypted location for {team_name}:\n{location}\n")
+
+        # Display image linked to the decrypted location
+        image_path = os.path.abspath("data/IMG_0356.jpg")
+        if os.path.exists(image_path):
+            webbrowser.open(image_path)
+        else:
+            print("[!] Image not found at:", image_path)
+
+except Exception as e:
+        print(f"[!] Error while decrypting location: {e}")
