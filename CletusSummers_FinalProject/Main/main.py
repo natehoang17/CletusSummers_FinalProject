@@ -1,5 +1,5 @@
 # File Name : main.py
-# Student Name: Andrew Rozsits, Nate Hoang, Raymond Happel, Liam Vasey
+# Student Name: Andrew Rozsits, Nate Hoang, Ray Happel, Liam Vasey
 # email:  rozsitaj@mail.uc.edu, hoangnd@mail.uc.edu, happelrc@mail.uc.edu, vaseylh@mail.uc.edu
 # Assignment Number: Final Assignment
 # Due Date:   5/1/2025
