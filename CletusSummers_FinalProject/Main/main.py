@@ -46,17 +46,33 @@ def main():
 
     team_name = "Cletus Summers"
 
-decryptor = Decryptor(english_file, group_hints_file)
-try:
+    # Part 1: Decrypt Location
+    decryptor = Decryptor(english_file, group_hints_file)
+    try:
         location = decryptor.decrypt_location(team_name)
-        print(f"[+] Decrypted location for {team_name}:\n{location}\n")
+        print(f"[+] Decrypted location for {team_name}:\n{location}\\n")
 
-        # Display image linked to the decrypted location
+        # Show the image right after location
         image_path = os.path.abspath("data/IMG_0356.jpg")
         if os.path.exists(image_path):
             webbrowser.open(image_path)
         else:
             print("[!] Image not found at:", image_path)
 
-except Exception as e:
+    except Exception as e:
         print(f"[!] Error while decrypting location: {e}")
+
+    # Part 2: Decrypt Team Message
+    try:
+        with open(team_messages_file, 'r', encoding='utf-8') as f:
+            messages = json.load(f)
+
+        encrypted_message = messages[team_name][0]
+        fernet_key = b"hbEtpFSqMhmWXiFyD8ZSZwQWpzK93yAhxTC_6vybmJY="
+        decrypted_message = decrypt_fernet_message(fernet_key, encrypted_message)
+        print(f"[+] Decrypted team message for {team_name}:\n{decrypted_message}")
+    except Exception as e:
+        print(f"[!] Error while decrypting message: {e}")
+
+if __name__ == "__main__":
+    main()
